@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class RecentActivities extends StatelessWidget {
@@ -43,6 +45,7 @@ class ActivityItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String activity = activities[Random().nextInt(activities.length)];
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed('/details');
@@ -78,7 +81,7 @@ class ActivityItem extends StatelessWidget {
             ),
             SizedBox(width: 20),
             Text(
-              'Walking',
+              activity,
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
             ),
             Expanded(child: SizedBox()),
