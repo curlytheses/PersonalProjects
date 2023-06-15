@@ -78,7 +78,7 @@ class Program extends StatelessWidget {
       },
       child: Container(
         height: 100,
-        width: 100,
+        width: 180,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
@@ -103,24 +103,26 @@ class Program extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(program.name),
-              Expanded(
-                child: Row(
-                  children: [
-                    Text(program.cals),
-                    SizedBox(
-                      width: 1,
-                    ),
-                    Icon(
-                      Icons.timer,
-                      size: 1,
-                      color: active ? Colors.white : Colors.black,
-                    ),
-                    SizedBox(
-                      width: 1,
-                    ),
-                    Text(program.time),
-                  ],
-                ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(program.cals),
+                      SizedBox(
+                        width: 15,
+                      ),
+                      Icon(
+                        Icons.timer,
+                        size: 10,
+                        color: active ? Colors.white : Colors.black,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(program.time),
+                    ],
+                  ),
+                ],
               )
             ],
           ),
