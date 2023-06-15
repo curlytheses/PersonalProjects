@@ -67,7 +67,23 @@ class ActivityItem extends StatelessWidget {
           Text(
             'Walking',
             style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
-          )
+          ),
+          Icon(
+            Icons.timer,
+            size: 12,
+          ),
+          Text(
+            '30 min',
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+          ),
+          Icon(
+            Icons.wb_sunny_outlined,
+            size: 12,
+          ),
+          Text(
+            '55 kkal',
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
+          ),
         ],
       ),
     );
