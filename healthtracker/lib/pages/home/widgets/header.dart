@@ -7,7 +7,7 @@ class AppHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 200,
+      height: 160,
       child: Stack(
         children: [
           CustomPaint(
