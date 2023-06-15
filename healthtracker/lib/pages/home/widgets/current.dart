@@ -103,22 +103,24 @@ class Program extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(program.name),
-              Row(
-                children: [
-                  Text(program.cals),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Icon(
-                    Icons.timer,
-                    size: 10,
-                    color: active ? Colors.white : Colors.black,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(program.time),
-                ],
+              Expanded(
+                child: Row(
+                  children: [
+                    Text(program.cals),
+                    SizedBox(
+                      width: 1,
+                    ),
+                    Icon(
+                      Icons.timer,
+                      size: 1,
+                      color: active ? Colors.white : Colors.black,
+                    ),
+                    SizedBox(
+                      width: 1,
+                    ),
+                    Text(program.time),
+                  ],
+                ),
               )
             ],
           ),
