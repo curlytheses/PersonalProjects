@@ -36,6 +36,7 @@ class ActivityItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(vertical: 5),
       height: 50,
       decoration: BoxDecoration(
         border: Border.all(
@@ -68,22 +69,35 @@ class ActivityItem extends StatelessWidget {
             'Walking',
             style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900),
           ),
+          Expanded(child: SizedBox()),
           Icon(
             Icons.timer,
             size: 12,
+          ),
+          SizedBox(
+            width: 5,
           ),
           Text(
             '30 min',
             style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
           ),
+          SizedBox(
+            width: 10,
+          ),
           Icon(
             Icons.wb_sunny_outlined,
             size: 12,
+          ),
+          SizedBox(
+            width: 5,
           ),
           Text(
             '55 kkal',
             style: TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
           ),
+          SizedBox(
+            width: 20,
+          )
         ],
       ),
     );
