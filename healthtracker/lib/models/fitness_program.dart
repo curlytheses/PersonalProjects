@@ -23,14 +23,14 @@ class FitnessProgram {
 
 final List<FitnessProgram> fitnessPrograms = [
   FitnessProgram(
-    image: AssetImage('asserts/images gym.jpg'),
+    image: AssetImage('asserts/images2.jpg'),
     name: 'Cardio',
     cals: '220kkal',
     time: '20 min',
     type: ProgramType.cardio,
   ),
   FitnessProgram(
-      image: AssetImage('asserts/images weight.jpg'),
+      image: AssetImage('asserts/images3.jpg'),
       name: 'Barbel Arm Lift',
       cals: '220kkal',
       time: '20 min',

@@ -71,7 +71,7 @@ class ActivityItem extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/images gym.jpg'),
+                      image: AssetImage('assets/images2.jpg'),
                       fit: BoxFit.fill,
                     )),
               ),
