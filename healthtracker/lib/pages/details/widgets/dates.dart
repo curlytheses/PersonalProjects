@@ -1,25 +1,39 @@
 import 'package:flutter/material.dart';
 
+import '../../../helpers.dart';
+
 class Dates extends StatelessWidget {
   const Dates({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        DateBox(),
-        DateBox(
-          active: true,
-        ),
-      ],
+    List<DateBox> dateboxes = [];
+    DateTime date = DateTime.now().subtract(Duration(days: 3));
+    for (var i = 0; i < 6; i++) {
+      dateboxes.add(DateBox(
+        date: date,
+        active: i == 3,
+      ));
+      date = date.add(Duration(days: 1));
+    }
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: dateboxes,
+      ),
     );
   }
 }
 
 class DateBox extends StatelessWidget {
   final bool active;
+  final DateTime date;
   const DateBox({
     this.active = false,
+    required this.date,
     super.key,
   });
 
@@ -36,6 +50,7 @@ class DateBox extends StatelessWidget {
                   Color(0xff92e2ff),
                   Color(0xff1ebdf8),
                 ],
+                begin: Alignment.topCenter,
               )
             : null,
         borderRadius: BorderRadius.circular(10),
@@ -43,26 +58,29 @@ class DateBox extends StatelessWidget {
           color: Color(0xffe1e1e1),
         ),
       ),
-      child: Column(
-        children: [
-          Text(
-            'Mon',
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
+      child: DefaultTextStyle.merge(
+        style: active ? TextStyle(color: Colors.white) : null,
+        child: Column(
+          children: [
+            Text(
+              daysofWeek[date.weekday]!,
+              style: TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Text(
-            '8',
-            style: TextStyle(
-              fontSize: 27,
-              fontWeight: FontWeight.w500,
+            SizedBox(
+              height: 8,
             ),
-          ),
-        ],
+            Text(
+              date.day.toString().padLeft(2, '0'),
+              style: TextStyle(
+                fontSize: 27,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
