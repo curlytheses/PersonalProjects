@@ -19,10 +19,10 @@ class GraphArea extends StatefulWidget {
   const GraphArea({Key? key}) : super(key: key);
 
   @override
-  _GraphAreaState createState() => _GraphAreaState();
+  GraphAreaState createState() => GraphAreaState();
 }
 
-class _GraphAreaState extends State<GraphArea>
+class GraphAreaState extends State<GraphArea>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   List<DataPoint> data = [

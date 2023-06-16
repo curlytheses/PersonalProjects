@@ -5,10 +5,10 @@ class Dates extends StatefulWidget {
   const Dates({Key? key}) : super(key: key);
 
   @override
-  _DatesState createState() => _DatesState();
+  DatesState createState() => DatesState();
 }
 
-class _DatesState extends State<Dates> {
+class DatesState extends State<Dates> {
   int activeIndex = 3;
 
   @override
