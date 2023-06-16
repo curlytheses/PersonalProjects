@@ -64,11 +64,12 @@ class Program extends StatelessWidget {
   final FitnessProgram program;
   final bool active;
   final Function(ProgramType) onTap;
-  const Program(
-      {super.key,
-      required this.program,
-      this.active = false,
-      required this.onTap});
+  const Program({
+    super.key,
+    required this.program,
+    this.active = false,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../helpers.dart';
+import '../../../models/helpers.dart';
 
 class Steps extends StatelessWidget {
   const Steps({Key? key}) : super(key: key);

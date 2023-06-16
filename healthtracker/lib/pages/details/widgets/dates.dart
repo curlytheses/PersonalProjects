@@ -1,40 +1,54 @@
 import 'package:flutter/material.dart';
+import '../../../models/helpers.dart';
 
-import '../../../helpers.dart';
+class CurrentDates extends StatefulWidget {
+  const CurrentDates({super.key});
 
-class Dates extends StatelessWidget {
-  const Dates({super.key});
+  @override
+  State<CurrentDates> createState() => _CurrentDateState();
+}
+
+class _CurrentDateState extends State<CurrentDates> {
+  DateTime active = datetime[0].type;
+  void _changeDate(DateTime newType) {
+    setState(() {
+      active = newType;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<DateBox> dateboxes = [];
-    DateTime date = DateTime.now().subtract(Duration(days: 3));
-    for (var i = 0; i < 6; i++) {
-      dateboxes.add(DateBox(
-        date: date,
-        active: i == 3,
-      ));
-      date = date.add(Duration(days: 1));
-    }
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: dateboxes,
+    return SizedBox(
+      width: double.infinity,
+      height: 100,
+      child: ListView.separated(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        scrollDirection: Axis.horizontal,
+        itemCount: datetime.length,
+        itemBuilder: (context, index) {
+          return DateBox(
+            dateTimes: datetime[index],
+            active: datetime[index].type == active,
+            onTap: _changeDate,
+          );
+        },
+        separatorBuilder: (context, index) => SizedBox(
+          width: 20,
+        ),
       ),
     );
   }
 }
 
 class DateBox extends StatelessWidget {
+  final DateTimes dateTimes;
   final bool active;
-  final DateTime date;
+  final Function(DateTime) onTap;
   const DateBox({
-    this.active = false,
-    required this.date,
     super.key,
+    required this.dateTimes,
+    this.active = false,
+    required this.onTap,
   });
 
   @override
@@ -63,7 +77,7 @@ class DateBox extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              daysofWeek[date.weekday]!,
+              datetime[0].name,
               style: TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.bold,
@@ -73,7 +87,7 @@ class DateBox extends StatelessWidget {
               height: 8,
             ),
             Text(
-              date.day.toString().padLeft(2, '0'),
+              datetime[0].name,
               style: TextStyle(
                 fontSize: 27,
                 fontWeight: FontWeight.w500,
