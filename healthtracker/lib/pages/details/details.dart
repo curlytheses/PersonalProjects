@@ -18,13 +18,13 @@ class DetailsPage extends StatelessWidget {
       appBar: MainAppBar(appBar: AppBar()),
       body: Column(
         children: const [
-          CurrentDates(),
+          Dates(),
           Steps(),
           Graph(),
           Info(),
-          Divider(height: 30),
+          Divider(height: 0),
           Stats(),
-          SizedBox(height: 30),
+          SizedBox(height: 1),
           BottomNavigation(),
         ],
       ),
