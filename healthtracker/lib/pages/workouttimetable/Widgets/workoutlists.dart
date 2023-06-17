@@ -108,7 +108,7 @@ class WorkOut extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(workouts.cals),
+                      Text(workouts.dateTime as String),
                       SizedBox(
                         width: 15,
                       ),
