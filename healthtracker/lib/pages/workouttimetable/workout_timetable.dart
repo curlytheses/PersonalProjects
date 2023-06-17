@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../models/workouts_models.dart';
 import '../../widgets/bottom_navigation.dart';
 import '../details/widgets/appbar.dart';
 
