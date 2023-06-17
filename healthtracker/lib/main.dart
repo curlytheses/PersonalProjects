@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/details': (context) => DetailsPage(),
-        '/workouttimetable': (context) => WorkoutTimetablePage(),
+        '/workouts': (context) => WorkoutTimetablePage(),
       },
       initialRoute: '/',
     );

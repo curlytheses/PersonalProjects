@@ -44,10 +44,17 @@ class BottomNavigation extends StatelessWidget {
             ),
             Icon(Icons.date_range),
             GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pushNamed('/details');
-                },
-                child: Icon(Icons.settings)),
+              onTap: () {
+                Navigator.of(context).pushNamed('/details');
+              },
+              child: Icon(Icons.details),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed('/workouts');
+              },
+              child: Icon(Icons.list_alt_rounded),
+            ),
           ],
         ),
       ),
