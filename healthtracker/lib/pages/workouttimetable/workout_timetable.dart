@@ -20,5 +20,3 @@ class WorkoutTimetablePage extends StatelessWidget {
     );
   }
 }
-
-

@@ -5,11 +5,11 @@ class WorkoutPrograms extends StatefulWidget {
   const WorkoutPrograms({super.key});
 
   @override
-  State<WorkoutPrograms> createState() => WorkoutProgramsState();
+  State<WorkoutPrograms> createState() => _WorkoutProgramsState();
 }
 
-class WorkoutProgramsState extends State<WorkoutPrograms> {
-  WorkoutType active = workouts[0].name as WorkoutType;
+class _WorkoutProgramsState extends State<WorkoutPrograms> {
+  WorkoutType active = workouts[0].type;
   void _changeProgram(WorkoutType newType) {
     setState(() {
       active = newType;
@@ -79,7 +79,7 @@ class WorkOut extends StatelessWidget {
       },
       child: Container(
         height: 100,
-        width: 180,
+        width: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
@@ -108,7 +108,7 @@ class WorkOut extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(workouts.dateTime as String),
+                      Text(workouts.name),
                       SizedBox(
                         width: 15,
                       ),
@@ -120,7 +120,7 @@ class WorkOut extends StatelessWidget {
                       SizedBox(
                         width: 5,
                       ),
-                      Text(workouts.duration as String),
+                      Text(workouts.name),
                     ],
                   ),
                 ],
