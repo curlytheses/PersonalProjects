@@ -62,7 +62,7 @@ class WorkoutProgramsState extends State<WorkoutPrograms> {
 }
 
 class Program extends StatelessWidget {
-  final FitnessProgram program;
+  final Workout program;
   final bool active;
   final Function(WorkoutType) onTap;
   const Program({
