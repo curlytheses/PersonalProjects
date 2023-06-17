@@ -51,7 +51,7 @@ class _WorkoutProgramsState extends State<WorkoutPrograms> {
               );
             },
             separatorBuilder: (context, index) => SizedBox(
-              width: 20,
+              width: 30,
             ),
           ),
         )
@@ -78,8 +78,8 @@ class WorkOut extends StatelessWidget {
         onTap(workouts.type);
       },
       child: Container(
-        height: 160,
-        width: 250,
+        height: 100,
+        width: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(

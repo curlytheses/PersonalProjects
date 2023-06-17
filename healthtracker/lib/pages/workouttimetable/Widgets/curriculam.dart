@@ -12,7 +12,7 @@ class _CurriculamState extends State<Curriculam> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 385,
+      height: 295,
       child: TimerWidget(),
     );
   }
@@ -104,13 +104,13 @@ class _TimerWidgetState extends State<TimerWidget>
                 shape: BoxShape.circle,
                 color: Colors.blue,
               ),
-              padding: EdgeInsets.all(90),
+              padding: EdgeInsets.all(50),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(
                   '${_hours.toString().padLeft(2, '0')}:${_minutes.toString().padLeft(2, '0')}:${_seconds.toString().padLeft(2, '0')}',
                   style: TextStyle(
-                    fontSize: 50,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
