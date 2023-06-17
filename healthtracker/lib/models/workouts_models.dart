@@ -5,6 +5,7 @@ enum WorkoutType {
   weightlifting,
   yoga,
   cardio,
+  pushup,
 }
 
 class Workout {
@@ -54,5 +55,12 @@ final List<Workout> workouts = [
     dateTime: DateTime.now(),
     duration: Duration(minutes: 45),
     type: WorkoutType.cardio,
+  ),
+  Workout(
+    name: 'Push Up',
+    image: AssetImage('assets/images2.jpg'),
+    dateTime: DateTime.now(),
+    duration: Duration(minutes: 45),
+    type: WorkoutType.pushup,
   ),
 ];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthtracker/pages/workouttimetable/Widgets/appbar.dart';
+import 'package:healthtracker/pages/workouttimetable/Widgets/curriculam.dart';
 import 'package:healthtracker/pages/workouttimetable/Widgets/workoutlists.dart';
 import '../../widgets/bottom_navigation.dart';
 
@@ -14,6 +15,7 @@ class WorkoutTimetablePage extends StatelessWidget {
       body: Column(
         children: const [
           WorkoutPrograms(),
+          Curriculam(),
           BottomNavigation(),
         ],
       ),
