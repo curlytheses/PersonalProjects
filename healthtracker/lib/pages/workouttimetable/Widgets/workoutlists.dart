@@ -78,16 +78,17 @@ class WorkOut extends StatelessWidget {
         onTap(workouts.type);
       },
       child: Container(
-        height: 100,
-        width: 200,
+        height: 160,
+        width: 250,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  active
-                      ? Color(0xff1ebdf8).withOpacity(0.8)
-                      : Colors.white.withOpacity(0.8),
-                  BlendMode.lighten),
+                active
+                    ? Color(0xff1ebdf8).withOpacity(0.8)
+                    : Colors.white.withOpacity(0.8),
+                BlendMode.lighten,
+              ),
               image: workouts.image,
               fit: BoxFit.cover),
         ),
@@ -108,7 +109,7 @@ class WorkOut extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(workouts.name),
+                      Text(workouts.dateTime.toString()),
                       SizedBox(
                         width: 15,
                       ),
@@ -120,7 +121,7 @@ class WorkOut extends StatelessWidget {
                       SizedBox(
                         width: 5,
                       ),
-                      Text(workouts.name),
+                      Text(workouts.duration.toString()),
                     ],
                   ),
                 ],

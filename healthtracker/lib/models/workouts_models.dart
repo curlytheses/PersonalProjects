@@ -28,7 +28,7 @@ class Workout {
 final List<Workout> workouts = [
   Workout(
     name: 'Morning Jog',
-    image: AssetImage('assets/images3.jpg'),
+    image: AssetImage('assets/images1.jpg'),
     dateTime: DateTime.now(),
     duration: Duration(minutes: 30),
     type: WorkoutType.jogging,
@@ -36,21 +36,21 @@ final List<Workout> workouts = [
   ),
   Workout(
     name: 'Weightlifting',
-    image: AssetImage('assets/images4.jpg'),
+    image: AssetImage('assets/images2.jpg'),
     dateTime: DateTime.now(),
     duration: Duration(hours: 1),
     type: WorkoutType.weightlifting,
   ),
   Workout(
     name: 'Yoga Session',
-    image: AssetImage('assets/images5.jpg'),
+    image: AssetImage('assets/images1.jpg'),
     dateTime: DateTime.now(),
     duration: Duration(minutes: 60),
     type: WorkoutType.yoga,
   ),
   Workout(
     name: 'Cardio Workout',
-    image: AssetImage('assets/images6.jpg'),
+    image: AssetImage('assets/images2.jpg'),
     dateTime: DateTime.now(),
     duration: Duration(minutes: 45),
     type: WorkoutType.cardio,
