@@ -26,7 +26,7 @@ class WorkoutProgramsState extends State<WorkoutPrograms> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Current Programs',
+                'Current Workouts',
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               Icon(
