@@ -120,7 +120,7 @@ class WorkOut extends StatelessWidget {
                       SizedBox(
                         width: 5,
                       ),
-                      Text(workouts.time),
+                      Text(workouts.duration as String),
                     ],
                   ),
                 ],
