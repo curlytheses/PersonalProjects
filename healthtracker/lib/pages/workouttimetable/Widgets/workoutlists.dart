@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:healthtracker/models/fitness_program.dart';
 import 'package:healthtracker/models/workouts_models.dart';
 
 class WorkoutPrograms extends StatefulWidget {
@@ -45,8 +44,8 @@ class WorkoutProgramsState extends State<WorkoutPrograms> {
             scrollDirection: Axis.horizontal,
             itemCount: workouts.length,
             itemBuilder: (context, index) {
-              return Program(
-                program: workouts[index],
+              return WorkOut(
+                workouts: workouts[index],
                 active: workouts[index].type == active,
                 onTap: _changeProgram,
               );
@@ -61,13 +60,13 @@ class WorkoutProgramsState extends State<WorkoutPrograms> {
   }
 }
 
-class Program extends StatelessWidget {
-  final Workout program;
+class WorkOut extends StatelessWidget {
+  final Workout workouts;
   final bool active;
   final Function(WorkoutType) onTap;
-  const Program({
+  const WorkOut({
     super.key,
-    required this.program,
+    required this.workouts,
     this.active = false,
     required this.onTap,
   });
@@ -76,7 +75,7 @@ class Program extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        onTap(program.type);
+        onTap(workouts.type);
       },
       child: Container(
         height: 100,
@@ -89,7 +88,7 @@ class Program extends StatelessWidget {
                       ? Color(0xff1ebdf8).withOpacity(0.8)
                       : Colors.white.withOpacity(0.8),
                   BlendMode.lighten),
-              image: program.image,
+              image: workouts.image,
               fit: BoxFit.cover),
         ),
         alignment: Alignment.bottomLeft,
@@ -104,12 +103,12 @@ class Program extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(program.name),
+              Text(workouts.name),
               Column(
                 children: [
                   Row(
                     children: [
-                      Text(program.cals),
+                      Text(workouts.cals),
                       SizedBox(
                         width: 15,
                       ),
@@ -121,7 +120,7 @@ class Program extends StatelessWidget {
                       SizedBox(
                         width: 5,
                       ),
-                      Text(program.time),
+                      Text(workouts.time),
                     ],
                   ),
                 ],
