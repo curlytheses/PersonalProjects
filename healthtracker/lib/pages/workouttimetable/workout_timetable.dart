@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
-import '../../models/workouts.dart';
+import '../../models/workouts_models.dart';
+import '../../widgets/bottom_navigation.dart';
+import '../details/widgets/appbar.dart';
 
-class WorkoutTimetablePage extends StatefulWidget {
+class WorkoutTimetablePage extends StatelessWidget {
   const WorkoutTimetablePage({super.key});
 
   @override
-  WorkoutTimetablePageState createState() => WorkoutTimetablePageState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: MainAppBar(appBar: AppBar()),
+      body: Column(
+        children: const [
+          BottomNavigation(),
+        ],
+      ),
+    );
+  }
 }
 
-class WorkoutTimetablePageState extends State<WorkoutTimetablePage> {
+/*class WorkoutTimetablePageState extends State<WorkoutTimetablePage> {
   List<Workout> workouts = [
     Workout(
       name: 'Morning Jog',
@@ -88,4 +100,5 @@ class WorkoutTimetablePageState extends State<WorkoutTimetablePage> {
       ),
     );
   }
-}
+}*/
+
