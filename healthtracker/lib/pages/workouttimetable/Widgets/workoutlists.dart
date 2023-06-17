@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:healthtracker/models/fitness_program.dart';
+import 'package:healthtracker/models/workouts_models.dart';
 
-class CurrentPrograms extends StatefulWidget {
-  const CurrentPrograms({super.key});
+class WorkoutPrograms extends StatefulWidget {
+  const WorkoutPrograms({super.key});
 
   @override
-  State<CurrentPrograms> createState() => _CurrentProgramsState();
+  State<WorkoutPrograms> createState() => WorkoutProgramsState();
 }
 
-class _CurrentProgramsState extends State<CurrentPrograms> {
-  ProgramType active = fitnessPrograms[0].type;
-  void _changeProgram(ProgramType newType) {
+class WorkoutProgramsState extends State<WorkoutPrograms> {
+  WorkoutType active = workouts[0].name as WorkoutType;
+  void _changeProgram(WorkoutType newType) {
     setState(() {
       active = newType;
     });
@@ -42,11 +43,11 @@ class _CurrentProgramsState extends State<CurrentPrograms> {
           child: ListView.separated(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             scrollDirection: Axis.horizontal,
-            itemCount: fitnessPrograms.length,
+            itemCount: workouts.length,
             itemBuilder: (context, index) {
               return Program(
-                program: fitnessPrograms[index],
-                active: fitnessPrograms[index].type == active,
+                program: workouts[index],
+                active: workouts[index].type == active,
                 onTap: _changeProgram,
               );
             },
@@ -63,7 +64,7 @@ class _CurrentProgramsState extends State<CurrentPrograms> {
 class Program extends StatelessWidget {
   final FitnessProgram program;
   final bool active;
-  final Function(ProgramType) onTap;
+  final Function(WorkoutType) onTap;
   const Program({
     super.key,
     required this.program,

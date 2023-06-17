@@ -13,7 +13,7 @@ class WorkoutTimetablePage extends StatelessWidget {
       appBar: AppBar1(appBar: AppBar()),
       body: Column(
         children: const [
-          CurrentPrograms(),
+          WorkoutPrograms(),
           BottomNavigation(),
         ],
       ),
