@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:healthtracker/pages/workouttimetable/Widgets/appbar.dart';
 import '../../widgets/bottom_navigation.dart';
-import '../details/widgets/appbar.dart';
 
 class WorkoutTimetablePage extends StatelessWidget {
   const WorkoutTimetablePage({super.key});
@@ -9,7 +9,7 @@ class WorkoutTimetablePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: MainAppBar(appBar: AppBar()),
+      appBar: AppBar1(appBar: AppBar()),
       body: Column(
         children: const [
           BottomNavigation(),
