@@ -125,7 +125,7 @@ class WorkOut extends StatelessWidget {
                     ],
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
