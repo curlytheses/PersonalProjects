@@ -11,12 +11,12 @@ class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  SignInScreenState createState() => SignInScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
-  TextEditingController _passwordTextController = TextEditingController();
-  TextEditingController _emailTextController = TextEditingController();
+class SignInScreenState extends State<SignInScreen> {
+  TextEditingController passwordTextController = TextEditingController();
+  TextEditingController emailTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,12 +40,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   height: 30,
                 ),
                 reusableTextField("Enter UserName", Icons.person_outline, false,
-                    _emailTextController),
+                    emailTextController),
                 const SizedBox(
                   height: 20,
                 ),
                 reusableTextField("Enter Password", Icons.lock_outline, true,
-                    _passwordTextController),
+                    passwordTextController),
                 const SizedBox(
                   height: 5,
                 ),
@@ -53,8 +53,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 firebaseUIButton(context, "Sign In", () {
                   FirebaseAuth.instance
                       .signInWithEmailAndPassword(
-                          email: _emailTextController.text,
-                          password: _passwordTextController.text)
+                          email: emailTextController.text,
+                          password: passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));

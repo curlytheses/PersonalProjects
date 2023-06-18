@@ -8,13 +8,13 @@ class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
 
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  SignUpScreenState createState() => SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController _passwordTextController = TextEditingController();
-  TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _userNameTextController = TextEditingController();
+class SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController passwordTextController = TextEditingController();
+  TextEditingController emailTextController = TextEditingController();
+  TextEditingController userNameTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,25 +45,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 20,
                 ),
                 reusableTextField("Enter UserName", Icons.person_outline, false,
-                    _userNameTextController),
+                    userNameTextController),
                 const SizedBox(
                   height: 20,
                 ),
                 reusableTextField("Enter Email Id", Icons.person_outline, false,
-                    _emailTextController),
+                    emailTextController),
                 const SizedBox(
                   height: 20,
                 ),
                 reusableTextField("Enter Password", Icons.lock_outlined, true,
-                    _passwordTextController),
+                    passwordTextController),
                 const SizedBox(
                   height: 20,
                 ),
                 firebaseUIButton(context, "Sign Up", () {
                   FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
-                          email: _emailTextController.text,
-                          password: _passwordTextController.text)
+                          email: emailTextController.text,
+                          password: passwordTextController.text)
                       .then((value) {
                     print("Created New Account");
                     Navigator.push(context,
