@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:healthtracker/pages/home/home.dart';
 import 'package:healthtracker/reset_password.dart';
 import 'package:healthtracker/reusable_widget.dart';
 import 'package:healthtracker/signup_page.dart';
 
 import 'color_utils.dart';
-import 'home_page.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -25,9 +25,9 @@ class SignInScreenState extends State<SignInScreen> {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-          hexStringToColor("CB2B93"),
-          hexStringToColor("9546C4"),
-          hexStringToColor("5E61F4")
+          hexStringToColor("0066CD"),
+          hexStringToColor("87CEEB"),
+          hexStringToColor("0066CD")
         ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
         child: SingleChildScrollView(
           child: Padding(
@@ -35,10 +35,6 @@ class SignInScreenState extends State<SignInScreen> {
                 20, MediaQuery.of(context).size.height * 0.2, 20, 0),
             child: Column(
               children: <Widget>[
-                logoWidget("assets/images/logo1.png"),
-                const SizedBox(
-                  height: 30,
-                ),
                 reusableTextField("Enter UserName", Icons.person_outline, false,
                     emailTextController),
                 const SizedBox(
@@ -57,10 +53,8 @@ class SignInScreenState extends State<SignInScreen> {
                           password: passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }).onError((error, stackTrace) {
-                    print("Error ${error.toString()}");
-                  });
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  }).onError((error, stackTrace) {});
                 }),
                 signUpOption()
               ],
