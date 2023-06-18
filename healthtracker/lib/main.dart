@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:healthtracker/pages/home_page.dart';
-import 'package:healthtracker/pages/login_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized;
