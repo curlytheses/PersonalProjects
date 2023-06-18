@@ -65,12 +65,9 @@ class SignUpScreenState extends State<SignUpScreen> {
                           email: emailTextController.text,
                           password: passwordTextController.text)
                       .then((value) {
-                    print("Created New Account");
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }).onError((error, stackTrace) {
-                    print("Error ${error.toString()}");
-                  });
+                  }).onError((error, stackTrace) {});
                 })
               ],
             ),
