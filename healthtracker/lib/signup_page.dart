@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'auth_service.dart';
 
@@ -5,6 +7,8 @@ class SignupPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final AuthService _authService = AuthService();
+
+  SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +50,8 @@ class SignupPage extends StatelessWidget {
   void _signup(BuildContext context) async {
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
-    String result = await _authService.signUpWithEmailAndPassword(email, password);
+    String result =
+        await _authService.signUpWithEmailAndPassword(email, password);
     if (result == 'success') {
       // Navigate to the login page or the next screen after successful signup
     } else {
