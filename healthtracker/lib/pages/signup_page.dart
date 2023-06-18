@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:healthtracker/color_utils.dart';
+import 'package:healthtracker/utilities/color_utils.dart';
 import 'package:healthtracker/pages/home_page.dart';
 import 'package:healthtracker/reusable_widget.dart';
 

@@ -5,7 +5,7 @@ import 'package:healthtracker/pages/reset_password.dart';
 import 'package:healthtracker/reusable_widget.dart';
 import 'package:healthtracker/pages/signup_page.dart';
 
-import '../color_utils.dart';
+import '../utilities/color_utils.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
