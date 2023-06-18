@@ -1,20 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:healthtracker/color_utils.dart';
-import 'package:healthtracker/home_page.dart';
 import 'package:healthtracker/reusable_widget.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+import '../color_utils.dart';
+
+class ResetPassword extends StatefulWidget {
+  const ResetPassword({Key? key}) : super(key: key);
 
   @override
-  SignUpScreenState createState() => SignUpScreenState();
+  ResetPasswordState createState() => ResetPasswordState();
 }
 
-class SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController passwordTextController = TextEditingController();
+class ResetPasswordState extends State<ResetPassword> {
   TextEditingController emailTextController = TextEditingController();
-  TextEditingController userNameTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +21,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
-          "Sign Up",
+          "Reset Password",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
       ),
@@ -44,30 +42,15 @@ class SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                reusableTextField("Enter UserName", Icons.person_outline, false,
-                    userNameTextController),
-                const SizedBox(
-                  height: 20,
-                ),
                 reusableTextField("Enter Email Id", Icons.person_outline, false,
                     emailTextController),
                 const SizedBox(
                   height: 20,
                 ),
-                reusableTextField("Enter Password", Icons.lock_outlined, true,
-                    passwordTextController),
-                const SizedBox(
-                  height: 20,
-                ),
-                firebaseUIButton(context, "Sign Up", () {
+                firebaseUIButton(context, "Reset Password", () {
                   FirebaseAuth.instance
-                      .createUserWithEmailAndPassword(
-                          email: emailTextController.text,
-                          password: passwordTextController.text)
-                      .then((value) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }).onError((error, stackTrace) {});
+                      .sendPasswordResetEmail(email: emailTextController.text)
+                      .then((value) => Navigator.of(context).pop());
                 })
               ],
             ),
