@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/details': (context) => DetailsPage(),
         '/workouts': (context) => WorkoutTimetablePage(),
-        '/login': (context) => LoginPage(),
+        '/login': (context) => SignInScreen(),
       },
       initialRoute: '/login',
     );
