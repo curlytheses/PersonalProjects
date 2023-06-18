@@ -19,11 +19,13 @@ class _CurriculamState extends State<Curriculam> {
 }
 
 class TimerWidget extends StatefulWidget {
+  const TimerWidget({super.key});
+
   @override
-  _TimerWidgetState createState() => _TimerWidgetState();
+  TimerWidgetState createState() => TimerWidgetState();
 }
 
-class _TimerWidgetState extends State<TimerWidget>
+class TimerWidgetState extends State<TimerWidget>
     with TickerProviderStateMixin {
   int _hours = 0;
   int _minutes = 0;
