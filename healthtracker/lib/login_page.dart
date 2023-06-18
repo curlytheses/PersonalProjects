@@ -6,6 +6,8 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _passwordController = TextEditingController();
   final AuthService _authService = AuthService();
 
+  LoginPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +48,8 @@ class LoginPage extends StatelessWidget {
   void _login(BuildContext context) async {
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
-    String result = await _authService.loginWithEmailAndPassword(email, password);
+    String result =
+        await _authService.loginWithEmailAndPassword(email, password);
     if (result == 'success') {
       // Navigate to the home page or the next screen after successful login
     } else {

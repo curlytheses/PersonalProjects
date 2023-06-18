@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:healthtracker/login_page.dart';
 import 'package:healthtracker/pages/WorkoutTimetable/workout_timetable.dart';
 import 'package:healthtracker/pages/details/details.dart';
 import 'package:healthtracker/pages/home/home.dart';
